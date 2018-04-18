@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package th2;
+package bth3;
 
 /**
  *
- * @author ngochoak57
+ * @author Admin
  */
-public class Th2 {
+public class BTH3 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Login().setVisible(true);
     }
     
 }
