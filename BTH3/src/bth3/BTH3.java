@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package th2;
+package bth3;
 
 /**
  *
- * @author ngochoak57
+ * @author Admin
  */
-public class TH2 {
+public class BTH3 {
 
     /**
      * @param args the command line arguments
