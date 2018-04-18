@@ -9,14 +9,13 @@ package th2;
  *
  * @author ngochoak57
  */
-public class Th2 {
+public class TH2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Login().setVisible(true);
     }
     
 }
