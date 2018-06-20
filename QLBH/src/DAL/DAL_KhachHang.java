@@ -94,5 +94,25 @@ public class DAL_KhachHang {
         } catch (Exception e) {
         }
         return ktra;
-    } 
+    }
+      public ArrayList<DTO_KhachHang> TimKH(){
+        ArrayList<DTO_KhachHang> dskh = new ArrayList<>();
+        try {
+            String sql = "EXEC KHACHHANG_LOAD";
+            Statement ss = conn.createStatement();
+            ResultSet rs = ss.executeQuery(sql);
+            while(rs.next()){
+                String makhach = rs.getString("MaKH");
+                String hoten = rs.getString("TenKH");
+                String diachi = rs.getString("DiaChi");
+                String dienthoai = rs.getString("DienThoai");
+                String ghichu = rs.getString("GhiChu");
+                DTO_KhachHang kh = new DTO_KhachHang(makhach, hoten, diachi, dienthoai,ghichu);
+                dskh.add(kh);
+            }
+            
+        } catch (Exception e) {
+        }
+        return dskh;
+    }
 }

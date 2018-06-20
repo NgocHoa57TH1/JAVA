@@ -6,8 +6,10 @@
 package BLL;
 
 import DAL.DAL_KhachHang;
+import DAL.LoadComboBox;
 import DTO.DTO_KhachHang;
 import java.util.Vector;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -63,4 +65,31 @@ public class BLL_KhachHang {
         return khDal.getTrungMa(manhap);
     }
     
+    public void LoadComboBoxTenKhachHang(JComboBox cbb){
+        LoadComboBox lcb = new LoadComboBox();
+        lcb.LoadComboBoxTenKhachHang(cbb);
+    }
+    
+    public void TimKh(JTable tb, JComboBox cbb){
+        Vector tbTieuDe = new Vector();
+        
+        Vector tbDong = new Vector();
+        tbTieuDe.add("Mã khách hàng");
+        tbTieuDe.add("Tên khách hàng");
+        tbTieuDe.add("Địa chỉ");
+        tbTieuDe.add("Điện thoại");
+        for (DTO_KhachHang kh : khDal.TimKH()){
+            if (kh.getTenKH().toUpperCase().equals(cbb.getSelectedItem().toString().toUpperCase())){
+                Vector v = new Vector();
+                v.add(kh.getMaKH());
+                v.add(kh.getTenKH());
+                v.add(kh.getDiaChi());
+                v.add(kh.getDienThoai());
+                v.add(kh.getGhiChu());
+                tbDong.add(v);
+                tb.setModel(new DefaultTableModel(tbDong, tbTieuDe));
+            }
+            
+        }
+    }
 }
